@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Ecom Regression Suite">
+    
+    <listeners>
+        <listener class-name="utils.MyListenerClass" />
+    </listeners>
+    
+    <test name="Demo Web Shop" verbose="2">
+        <classes>
+            <class name="tests.RegisterTest"/>
+            <class name="tests.LoginTest"/>
+             <class name="tests.ProductSearchTest"/>
+            <class name="tests.CategoryTest"/>
+             <class name="tests.AddToCartTest"/>
+            <class name="tests.WishlistTest"/>
+             <class name="tests.WishlistTocartTest"/>
+            <class name="tests.CartToOrderTest"/>
+        </classes>
+    </test>
+</suite>
