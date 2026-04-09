@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 public class BaseClass {
     public WebDriver driver;
@@ -27,6 +28,12 @@ public class BaseClass {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get(prop.getProperty("url"));
+    }
+    
+    @BeforeMethod
+    public void screenshotConfig() {
+        driver.manage().deleteAllCookies();
+        driver.get("your_app_url");
     }
 
     public String captureScreenshot(String testName) {
