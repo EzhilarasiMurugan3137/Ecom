@@ -26,15 +26,12 @@ public class BaseClass {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get(prop.getProperty("url"));
     }
     
-    @BeforeMethod
-    public void screenshotConfig() {
-        driver.manage().deleteAllCookies();
-        driver.get("your_app_url");
-    }
+    
 
     public String captureScreenshot(String testName) {
         String timeStamp = new java.text.SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date());
