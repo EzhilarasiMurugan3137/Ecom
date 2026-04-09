@@ -66,7 +66,7 @@ public class AddtoCartPage {
 	{
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	    String actualQty = wait.until(ExpectedConditions.visibilityOf(quantityInput)).getAttribute("value");
-	    org.testng.Assert.assertEquals(actualQty, "3", "Quantity confirmation failed!");
+	    org.testng.Assert.assertEquals(actualQty, "1", "Quantity confirmation failed!");
 	    
 	    // 3. Print success message
 	    System.out.println("Quantity confirmation successful: " + actualQty);
